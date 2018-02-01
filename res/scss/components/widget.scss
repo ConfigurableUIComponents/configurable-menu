@@ -1,0 +1,166 @@
+$widgetHeaderHeight: 66px;
+$headerHeightAdjustment: 33px;
+$menuIconWidth : 37px;
+$menuIconPaddingRight : 15px;
+
+.blockLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100000;
+    opacity: 0;
+    display: none;
+}
+
+.iframeWidget{
+	width: 100%;
+	height: 100%;
+	border-width: 0px;
+}
+
+.widgetHeader{
+    height: $widgetHeaderHeight;
+    background-color: #ffffff;
+    .menuKebab{
+        position: absolute;
+        top: 15px;
+        right: $menuIconPaddingRight;
+        display: inline-block;
+        @extend .icon-Kebab_Default;
+        cursor: pointer;
+        &:hover{
+            @extend .icon-Kebab_Hover;
+        }
+        &.open{
+            @extend .icon-Kebab_Selected;
+        }
+    }
+    .name{
+        font-family: "Segoe UI Semibold";
+        text-transform: uppercase;
+        line-height: $widgetHeaderHeight;
+        font-weight: normal;
+        font-size: 20px;
+        padding-left: 30px;
+        max-height : $widgetHeaderHeight;
+        color: #404f5a;
+        width : calc(100% - #{$menuIconWidth} - #{$menuIconPaddingRight} - 30px);
+        @extend .oneLineEllipsis;
+
+    }
+
+    .widgetHeaderMenu {
+        position: absolute;
+        right: 51px;
+        top: 15px;
+        z-index: 1;
+        background-color: #ffffff;
+        border-color: #e5e5e5;
+        border-width: 1px;
+        border-style: solid;
+        display:none;
+        &.open {
+            display:block;
+        }
+    }
+
+    .menuItem{
+        text-transform: capitalize;
+        z-index: 2;
+        position: relative;
+        display: inline;
+        width: 40px;
+        height: 37px;
+        float: left;
+        &.disabled{
+            visibility: hidden;
+            width: 0px;
+            height: 0px;
+        }
+        &:hover {
+          cursor:pointer;
+          background-color: #01AFD1;
+        }
+        &:hover::after {
+          font-family: "Segoe UI Semibold";
+          font-size: 14px;
+          white-space: nowrap;
+          background: #000;
+          bottom: 40px;
+          color: #fff;
+          content: attr(data-tooltip);
+          left: -50%;
+          padding: 8px 12px;
+          position: absolute;
+          z-index: 98;
+          text-align: center;
+        }
+        &:hover::before {
+          border: solid;
+          border-color: #000 transparent;
+          border-width: 6px 6px 0 6px;
+          bottom: 34px;
+          content: "";
+          left: 35%;
+          position: absolute;
+          z-index: 99;
+        }
+        &:hover .remove {
+          @extend .remove-widget-header-hover-icon;
+        }
+        &:hover .refresh {
+          @extend .refresh-widget-hover-icon;
+        }
+        &:hover .seeAll {
+          @extend .see-all-hover-icon;
+        }
+        .menuItemIcon{
+            @extend .center;
+            &.seeAll{
+                @extend .see-all-icon;
+            }
+            &.refresh{
+                @extend .refresh-widget-icon;
+            }
+            &.remove{
+                @extend .remove-widget-header-icon;
+            }
+        }
+    }
+}
+
+.widgetContent{
+	position : relative;
+	height : calc(100% - #{$widgetHeaderHeight} - #{$headerHeightAdjustment});
+    padding-top: 0px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.grid-stack-item-content{
+    border-color: #dcdcdc;
+    border-width: 1px;
+    border-style: solid;
+    &.highlight{
+        border-color: #fff5b5;
+        border-width: 3px;
+    }
+}
+
+.grid-stack > .grid-stack-item > .grid-stack-item-content{
+  overflow-x: visible;
+  overflow-y: visible;
+}
+
+.grid-stack-item{
+    &.pendingRemove{
+        opacity: 0.2;
+    }
+}
+
+.widgetWrapper{
+    height: 100%;
+    background-color: white;
+}
