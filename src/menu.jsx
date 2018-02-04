@@ -27,13 +27,13 @@ export default class Menu extends Component {
     return (
       <div>
         <div className="sidebarButton" title="Open Sidebar" onClick ={this.onOpenSidebar} > View Settings </div>
-          <SideBar
+        <SideBar
             opened = {this.state.sidebarOpened}
             headerTitle={this.props.title}
             onCloseSidebar={this.onCloseSidebar}
             items={this.props.items}
-            selectedItemId={this.props.selectedItem}
-          />
+            selectedItemId={this.props.selectedItem.id}
+        />
       </div>
     );
   }
