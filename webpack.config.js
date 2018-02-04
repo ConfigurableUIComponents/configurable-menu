@@ -8,9 +8,9 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'CardsLayoutManager.dist.js',
+    filename: 'configurable-menu.js',
     publicPath: '/',
-    library: 'CardsLayoutManager',
+    library: 'configurable-menu',
     libraryTarget: 'umd',
   },
   resolve: {
@@ -57,7 +57,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new ExtractTextPlugin('cards-framework.css'),
+    new ExtractTextPlugin('configurableMenu.css'),
   ],
 
   externals: ['react-dom', 'react'],

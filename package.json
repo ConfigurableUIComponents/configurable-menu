@@ -1,11 +1,10 @@
 {
-  "name": "cards-framework",
+  "name": "configurable-menu",
   "version": "1.0.0",
-  "main": "dist/cardsFramework.dist.js",
+  "main": "dist/configurable-menu",
   "scripts": {
     "build": "webpack --bail -p",
     "predev-dist": "npm run build",
-    "dev-dist": "webpack --bail --config webpack.dist.config.js ",
     "lint": "eslint dev --ext .jsx,.js",
     "lint-fix": "npm run lint -- --fix",
     "dev": "webpack-dev-server --config webpack.dev.config.js --color --hot -d --progress"
@@ -13,22 +12,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "babel-eslint": "^8.0.3",
-    "mobx": "^3.4.1",
-    "mobx-react": "^4.3.5",
-    "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-grid-layout": "^0.16.1",
-    "recharts": "^1.0.0-beta.6",
-    "wolfy87-eventemitter": "^5.2.4",
     "velocity-react": "1.1.5"
   },
-  "peerDependencies": {
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
-  },
   "devDependencies": {
+    "babel-eslint": "^8.0.3",
+    "prop-types": "^15.6.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.3",
