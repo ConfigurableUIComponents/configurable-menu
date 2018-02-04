@@ -3,7 +3,7 @@ import React from 'react';
 import WidgetList from './WidgetList.jsx';
 //import {VelocityTransitionGroup} from 'velocity-react';
 import '../../res/scss/components/sidebar.scss';
-import MenuItem from './MenuItem';
+import MenuItem from '../MenuItem';
 
 /*
 
@@ -47,14 +47,12 @@ class Sidebar extends React.Component {
     }
   }
 
-	onClose = () => {
-		this.props.onCloseSidebar();
-	}
 
-	renderSidebarHeader (onClose) {
+
+	renderSidebarHeader () {
 		return (
 			<div className = "sidebarHeader clearfix">
-				<div className = "close" onClick={onClose}></div>
+				<div className = "close" onClick={this.props.onCloseSidebar}></div>
 				<div className = "title" title={this.props.headerTitle}> {/*add localization?*/}
 					{this.props.headerTitle}
 				</div>
@@ -109,7 +107,7 @@ class Sidebar extends React.Component {
 		//let personalizedHeader =  renderPersonalizedHeader(this.props.dashboard, onPersonalizationClicked);
 		return (
 			<div className = {this.props.opened ? "sidebar opened" : "sidebar"} >
-				{this.renderSidebarHeader(this.onClose)}
+				{this.renderSidebarHeader()}
         {
           this.props.items.map((item) => {
             const {id, displayName, onClick} = item;

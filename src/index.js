@@ -1,3 +1,3 @@
 /* eslint-disable import/prefer-default-export */
 
-export { default as ConfigurableMenu } from './menu';
+export { default as ConfigurableMenu } from './ConfigurableMenu';
