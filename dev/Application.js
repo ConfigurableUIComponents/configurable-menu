@@ -35,7 +35,7 @@ export default class Application extends React.Component {
     return [
       <div>my selected view:{this.state.selectedItem.id}</div>,
       <div className="sidebarButton" title="Open Sidebar" onClick ={this.onOpenSidebar}>View Settings</div>,
-      <ConfigurableMenu open={this.state.sidebarOpened} onClose={this.onCloseSidebar} title="views menu" items={items} selectedItem={this.state.selectedItem} onSelectionChnage={this.onSelectionChange} />
+      <ConfigurableMenu open={this.state.sidebarOpened} onClose={this.onCloseSidebar} title="views menu" items={items} selectedItem={this.state.selectedItem} onSelectionChange={this.onSelectionChange} />
     ]
   };
 

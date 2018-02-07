@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import '../res/scss/components/mainApp.scss';
-import MenuItem from './MenuItem';
+import MenuItem from '../../configurable-interactive-layout/src/MenuItem';
 import '../res/scss/components/sidebar.scss';
 
 export default class ConfigurableMenu extends Component {
@@ -30,7 +30,7 @@ export default class ConfigurableMenu extends Component {
               const {id, displayName, onClick} = item;
               const isSelected = item.id === this.props.selectedItem.id;
               if (item.type === 'button') return <MenuItem id={id} displayName={displayName}
-                                                           onClick={this.props.onSelectionChnage} isSelected={isSelected}/>;
+                                                           onClick={this.props.onSelectionChange} isSelected={isSelected}/>;
             })
           }
         </div>
