@@ -1,13 +1,13 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import '../res/scss/components/mainApp.scss';
-import MenuItem from '../../configurable-interactive-layout/src/MenuItem';
+import MenuItem from './MenuItem';
+import CheckList from './CheckList';
+
 import '../res/scss/components/sidebar.scss';
 
 export default class ConfigurableMenu extends Component {
-  constructor(props) {
-    super(props);
-  }
+
 
   renderSidebarHeader () {
     return (
@@ -19,6 +19,19 @@ export default class ConfigurableMenu extends Component {
         </div>
     )}
 
+    getControls() {
+      const controls = this.props.items.map((item) => {
+        const {id, displayName, onClick ,status, items} = item;
+        const isSelected = item.id === this.props.selectedItem.id;
+        if (item.type === 'button') return <MenuItem id={id} displayName={displayName}
+                                                     onClick={this.props.onSelectionChange} isSelected={isSelected}/>;
+        if (item.type === 'checklist') return <CheckList id={id} displayName={displayName} items={items}
+                                                         onClick={this.props.onSelectionChange} isSelected={isSelected} />;
+
+      })
+      return controls;
+    }
+
 
   render() {
     return (
@@ -26,12 +39,7 @@ export default class ConfigurableMenu extends Component {
         <div className = {this.props.open ? "sidebar opened" : "sidebar"} >
           {this.renderSidebarHeader()}
           {
-            this.props.items.map((item) => {
-              const {id, displayName, onClick} = item;
-              const isSelected = item.id === this.props.selectedItem.id;
-              if (item.type === 'button') return <MenuItem id={id} displayName={displayName}
-                                                           onClick={this.props.onSelectionChange} isSelected={isSelected}/>;
-            })
+            this.getControls()
           }
         </div>
 

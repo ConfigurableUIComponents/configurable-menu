@@ -8,7 +8,7 @@ export default class Application extends React.Component {
   constructor(){
     super();
     this.state = {
-      selectedItem: { id: 'roleB' },
+      selectedItem: { id: 'checkList1' },
       sidebarOpened: true,
     };
   }
