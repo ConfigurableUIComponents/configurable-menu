@@ -13,12 +13,16 @@ export default class CheckList extends React.Component {
   }
 
   onSubItemSelected(changedItem) {
-      const items = this.state.items;
+
+    const items = this.state.items;
       items.map(item => {
           if(item.id === changedItem.id) item.isSelected = !item.isSelected;
           return item;
       })
-      this.setState({items})
+    this.props.selectedChecklistItems(changedItem);
+
+    this.setState({items});
+   //  this.props.onClick(this);
   }
 
 

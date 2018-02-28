@@ -26,7 +26,7 @@ export default class ConfigurableMenu extends Component {
         if (item.type === 'button') return <MenuItem id={id} displayName={displayName}
                                                      onClick={this.props.onSelectionChange} isSelected={isSelected}/>;
         if (item.type === 'checklist') return <CheckList id={id} displayName={displayName} items={items}
-                                                         onClick={this.props.onSelectionChange} isSelected={isSelected} />;
+                                                         onClick={this.props.onSelectionChange} selectedChecklistItems={this.props.selectedChecklistItems} isSelected={isSelected} />;
 
       })
       return controls;
