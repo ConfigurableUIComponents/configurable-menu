@@ -26,11 +26,15 @@ export default class CheckList extends React.Component {
   }
 
 
-  getCheckLists(){
-      return this.state.items.map((item) => {
-          return <div><input type="checkbox" checked={item.isSelected} onClick={() => this.onSubItemSelected(item)}></input><label>{item.displayName}</label></div>
-      })
-  }
+    getCheckLists() {
+        return this.state.items.map((item) => {
+            return <div className="item widgetItem">
+                <input className="checkbox" type="checkbox" checked={item.isSelected}
+                       onClick={() => this.onSubItemSelected(item)}></input>
+                <span className="widgetName">{item.displayName}</span>
+            </div>
+        })
+    }
 
 	render() {
     var i =0;
@@ -45,7 +49,7 @@ export default class CheckList extends React.Component {
              title={displayName}>
           <div className = "dashboardName">{displayName}</div>
         </div>,
-        <div>
+        <div className="widgetList">
           {
             isSelected ? this.getCheckLists() : null
           }
