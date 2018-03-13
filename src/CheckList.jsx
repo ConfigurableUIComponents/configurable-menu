@@ -28,9 +28,9 @@ export default class CheckList extends React.Component {
 
     getCheckLists() {
         return this.state.items.map((item) => {
-            return <div className="item widgetItem">
-                <input className="checkbox" type="checkbox" checked={item.isSelected}
-                       onClick={() => this.onSubItemSelected(item)}></input>
+            let classNameItem = `item widgetItem ${item.isSelected ? 'selected' : ''}`;
+            return <div className={classNameItem}>
+                <span className="checkbox" type="checkbox" onClick={() => this.onSubItemSelected(item)}></span>
                 <span className="widgetName">{item.displayName}</span>
             </div>
         })
