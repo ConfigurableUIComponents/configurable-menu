@@ -23,9 +23,9 @@ export default class ConfigurableMenu extends Component {
       const controls = this.props.items.map((item) => {
         const {id, displayName, onClick ,status, items} = item;
         const isSelected = item.id === this.props.selectedItem.id;
-        if (item.type === 'button') return <MenuItem id={id} displayName={displayName}
+        if (item.type === 'button') return <MenuItem key={`MenuItem${item.id}`} id={id} displayName={displayName}
                                                      onClick={this.props.onSelectionChange} isSelected={isSelected}/>;
-        if (item.type === 'checklist') return <CheckList id={id} displayName={displayName} items={items}
+        if (item.type === 'checklist') return <CheckList key={`CheckList${item.id}`} id={id} displayName={displayName} items={items}
                                                          onClick={this.props.onSelectionChange} selectedChecklistItems={this.props.selectedChecklistItems} isSelected={isSelected} />;
 
       })

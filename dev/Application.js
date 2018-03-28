@@ -74,10 +74,10 @@ let checklist ;
 
   render() {
     return [
-      <div>my selected view:{this.state.selectedItem.id}</div>,
-      <button onClick={() => this.disableCard(items)} >remove card B </button>,
-      <div className="sidebarButton" title="Open Sidebar" onClick ={ () =>  this.onOpenSidebar}>View Settings</div>,
-      <ConfigurableMenu open={this.state.sidebarOpened} onClose={this.onCloseSidebar} title="views menu" items={this.state.items} selectedItem={this.state.selectedItem} onSelectionChange={this.onSelectionChange} selectedChecklistItems={this.onSelectedChecklistItem} />,
+      <div key="1" >my selected view:{this.state.selectedItem.id}</div>,
+      <button key="2" onClick={() => this.disableCard(items)} >remove card B </button>,
+      <div key="3" className="sidebarButton" title="Open Sidebar" onClick ={ () =>  this.onOpenSidebar}>View Settings</div>,
+      <ConfigurableMenu key="4" open={this.state.sidebarOpened} onClose={this.onCloseSidebar} title="views menu" items={this.state.items} selectedItem={this.state.selectedItem} onSelectionChange={this.onSelectionChange} selectedChecklistItems={this.onSelectedChecklistItem} />,
     ]
   };
 

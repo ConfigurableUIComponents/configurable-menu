@@ -29,7 +29,7 @@ export default class CheckList extends React.Component {
     getCheckLists() {
         return this.state.items.map((item) => {
             let classNameItem = `item widgetItem ${item.isSelected ? 'selected' : ''}`;
-            return <div className={classNameItem}>
+            return <div key={`item${item.id}`} className={classNameItem}>
                 <span className="checkbox" type="checkbox" onClick={() => this.onSubItemSelected(item)}></span>
                 <span className="widgetName">{item.displayName}</span>
             </div>
@@ -49,7 +49,7 @@ export default class CheckList extends React.Component {
              title={displayName}>
           <div className = "dashboardName">{displayName}</div>
         </div>,
-        <div className="widgetList">
+        <div key={`widgetList${id}`} className="widgetList">
           {
             isSelected ? this.getCheckLists() : null
           }
