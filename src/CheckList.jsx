@@ -12,6 +12,10 @@ export default class CheckList extends React.Component {
     };
   }
 
+  componentWillReceiveProps = (props) => {
+    this.setState({items: props.items});
+  }
+
   onSubItemSelected(changedItem) {
 
     const items = this.state.items;
