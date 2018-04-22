@@ -1,6 +1,6 @@
 {
   "name": "configurable-menu",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "main": "dist/configurable-menu.js",
   "scripts": {
     "build": "webpack --bail -p",

@@ -35,7 +35,7 @@ export default class CheckList extends React.Component {
             let classNameItem = `item widgetItem ${item.isSelected ? 'selected' : ''}`;
             return <div key={`item${item.id}`} className={classNameItem}>
                 <span className="checkbox" type="checkbox" onClick={() => this.onSubItemSelected(item)}></span>
-                <span className="widgetName">{item.displayName}</span>
+                <span className="widgetName" title={item.displayName}>{item.displayName}</span>
             </div>
         })
     }
