@@ -1,6 +1,5 @@
 /* eslint-disable */
 import React, { Component } from 'react';
-import '../res/scss/components/mainApp.scss';
 import MenuItem from './MenuItem';
 import CheckList from './CheckList';
 
